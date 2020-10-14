@@ -1,0 +1,6 @@
+c:\users\toma.17085\documents\visual studio 2015\Projects\Esercizio traccia audio\Esercizio traccia audio\bin\Debug\Esercizio traccia audio.exe.config
+c:\users\toma.17085\documents\visual studio 2015\Projects\Esercizio traccia audio\Esercizio traccia audio\bin\Debug\Esercizio traccia audio.exe
+c:\users\toma.17085\documents\visual studio 2015\Projects\Esercizio traccia audio\Esercizio traccia audio\bin\Debug\Esercizio traccia audio.pdb
+c:\users\toma.17085\documents\visual studio 2015\Projects\Esercizio traccia audio\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.exe
+c:\users\toma.17085\documents\visual studio 2015\Projects\Esercizio traccia audio\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.pdb
+c:\users\toma.17085\documents\visual studio 2015\Projects\Esercizio traccia audio\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.csprojResolveAssemblyReference.cache
