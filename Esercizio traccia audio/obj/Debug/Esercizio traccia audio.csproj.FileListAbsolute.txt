@@ -4,3 +4,10 @@ c:\users\toma.17085\documents\visual studio 2015\Projects\Esercizio traccia audi
 c:\users\toma.17085\documents\visual studio 2015\Projects\Esercizio traccia audio\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.exe
 c:\users\toma.17085\documents\visual studio 2015\Projects\Esercizio traccia audio\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.pdb
 c:\users\toma.17085\documents\visual studio 2015\Projects\Esercizio traccia audio\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.csprojResolveAssemblyReference.cache
+C:\Users\bhz_ema\Desktop\tracceaudio-main\Esercizio traccia audio\bin\Debug\Esercizio traccia audio.exe.config
+C:\Users\bhz_ema\Desktop\tracceaudio-main\Esercizio traccia audio\bin\Debug\Esercizio traccia audio.exe
+C:\Users\bhz_ema\Desktop\tracceaudio-main\Esercizio traccia audio\bin\Debug\Esercizio traccia audio.pdb
+C:\Users\bhz_ema\Desktop\tracceaudio-main\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.csprojAssemblyReference.cache
+C:\Users\bhz_ema\Desktop\tracceaudio-main\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.csproj.CoreCompileInputs.cache
+C:\Users\bhz_ema\Desktop\tracceaudio-main\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.exe
+C:\Users\bhz_ema\Desktop\tracceaudio-main\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.pdb
