@@ -4,7 +4,8 @@ namespace Esercizio_traccia_audio
 {
     class Program
     {
-        public struct Traccia {
+        public struct Traccia
+        {
             public string codice;
             public string titolo;
             public string nomeFile;
@@ -74,15 +75,20 @@ namespace Esercizio_traccia_audio
                 x = 0;
                 max = 0;
                 media = default;
-                inputInt = default(int);
-                inputStr = default(string);
-                trovato = default(bool);
+                inputInt = default;
+                inputStr = default;
+                trovato = default;
 
-                
+
 
 
                 switch (scelta)
                 {
+                    case 0:
+                        {
+                            quit = true;
+                            break;
+                        }
                     case 1:
                         {
                             do
@@ -112,16 +118,17 @@ namespace Esercizio_traccia_audio
                             inputStr = Console.ReadLine();
                             while (x < id && !trovato)
                             {
-                                if(listaTracce[x].codice == inputStr)
+                                if (listaTracce[x].codice == inputStr)
                                 {
                                     trovato = true;
-                                } else
+                                }
+                                else
                                 {
                                     x++;
                                 }
                             }
 
-                            if(trovato)
+                            if (trovato)
                             {
                                 Console.WriteLine("################################");
                                 Console.WriteLine($"Codice: {listaTracce[x].codice}");
@@ -132,7 +139,7 @@ namespace Esercizio_traccia_audio
                                 Console.WriteLine($"Prezzo: {listaTracce[x].prezzo}");
                                 Console.WriteLine("################################");
                                 Console.WriteLine("Vuoi modificare questa traccia? [S/N]");
-                                if(Console.ReadKey(true).KeyChar == 's')
+                                if (Console.ReadKey(true).KeyChar == 's')
                                 {
                                     Console.WriteLine("################################");
                                     Console.Write("Codice: ");
@@ -150,7 +157,8 @@ namespace Esercizio_traccia_audio
                                     Console.WriteLine("################################");
                                     Console.WriteLine("Traccia modificata con successo");
                                 }
-                            } else
+                            }
+                            else
                             {
                                 Console.WriteLine("Nessuna traccia trovata con codice " + inputStr);
                             }
@@ -158,18 +166,18 @@ namespace Esercizio_traccia_audio
                         }
                     case 3:
                         {
-                            while(x < id)
+                            while (x < id)
                             {
-                                if (listaTracce[x].codice != null)
-                                {
-                                    Console.WriteLine("################################");
-                                    Console.WriteLine($"Codice: {listaTracce[x].codice}");
-                                    Console.WriteLine($"Titolo: {listaTracce[x].titolo}");
-                                    Console.WriteLine($"File  : {listaTracce[x].nomeFile}");
-                                    Console.WriteLine($"Durata: {listaTracce[x].durata} secondi");
-                                    Console.WriteLine($"Genere: {listaTracce[x].genere}");
-                                    Console.WriteLine($"Prezzo: {listaTracce[x].prezzo} euro");
-                                }
+                                //if (listaTracce[x].codice != null)
+                                //{
+                                Console.WriteLine("################################");
+                                Console.WriteLine($"Codice: {listaTracce[x].codice}");
+                                Console.WriteLine($"Titolo: {listaTracce[x].titolo}");
+                                Console.WriteLine($"File  : {listaTracce[x].nomeFile}");
+                                Console.WriteLine($"Durata: {listaTracce[x].durata} secondi");
+                                Console.WriteLine($"Genere: {listaTracce[x].genere}");
+                                Console.WriteLine($"Prezzo: {listaTracce[x].prezzo} euro");
+                                //}
                                 x++;
                             }
                             Console.WriteLine("################################");
@@ -179,25 +187,37 @@ namespace Esercizio_traccia_audio
                         {
                             Console.Write("Cancellazione tracce, inserisci la durata minima delle tracce: ");
                             inputInt = int.Parse(Console.ReadLine());
-                            while(x < id)
+                            while (x < id)
                             {
-                                if(listaTracce[x].durata < inputInt)
+                                if (listaTracce[x].durata <= inputInt)
                                 {
-                                    Console.WriteLine(listaTracce[x].titolo + " cancellata");
-                                    listaTracce[x] = default(Traccia);
+                                    id--;
+                                    y = x;
+                                    while (y < id)
+                                    {
+                                        if (y != listaTracce.Length - 1)
+                                        {
+                                            listaTracce[y] = listaTracce[y + 1];
+                                            
+                                            y++;
+                                        }
+                                    }
+                                    x--;
                                 }
+
                                 x++;
                             }
-                            Console.WriteLine("Cancellate tutte le tracce con durata inferiore a " + inputInt + " secondi");
-                            break;
+                            
                         }
+                        Console.WriteLine("Cancellate tutte le tracce con durata inferiore a " + inputInt + " secondi");
+                        break;
                     case 5:
                         {
                             Console.Write("Inserisci la categorie delle tracce per cui calcolare la media: ");
                             inputStr = Console.ReadLine();
-                            while(x < id)
+                            while (x < id)
                             {
-                                if(listaTracce[x].codice != null && listaTracce[x].genere == inputStr)
+                                if (listaTracce[x].codice != null && listaTracce[x].genere == inputStr)
                                 {
                                     media += listaTracce[x].prezzo;
                                     y++;
@@ -218,7 +238,7 @@ namespace Esercizio_traccia_audio
                         {
                             while (x < id)
                             {
-                                if(listaTracce[x].prezzo > max)
+                                if (listaTracce[x].prezzo > max)
                                 {
                                     max = listaTracce[x].prezzo;
                                     y = x;
