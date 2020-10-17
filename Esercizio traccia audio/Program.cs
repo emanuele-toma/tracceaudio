@@ -72,6 +72,8 @@ namespace Esercizio_traccia_audio
                 Console.Clear();
                 y = 0;
                 x = 0;
+                max = 0;
+                media = default;
                 inputInt = default(int);
                 inputStr = default(string);
                 trovato = default(bool);
@@ -195,7 +197,7 @@ namespace Esercizio_traccia_audio
                             inputStr = Console.ReadLine();
                             while(x < id)
                             {
-                                if(listaTracce[x].codice != null)
+                                if(listaTracce[x].codice != null && listaTracce[x].genere == inputStr)
                                 {
                                     media += listaTracce[x].prezzo;
                                     y++;
@@ -203,14 +205,13 @@ namespace Esercizio_traccia_audio
                                 x++;
                             }
 
-                            if(y == 0)
+                            if (y == 0)
                             {
                                 Console.WriteLine("Nessuna traccia trovata...");
-                            } else
-                            {
-                                media /= y;
-                                Console.WriteLine($"La media dei prezzi delle tracce nella categoria {inputStr} è di {media} euro");
+                                break;
                             }
+                            media /= y;
+                            Console.WriteLine($"La media dei prezzi delle tracce nella categoria {inputStr} è di {media} euro");
                             break;
                         }
                     case 6:
