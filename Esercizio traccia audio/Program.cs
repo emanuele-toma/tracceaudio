@@ -225,6 +225,7 @@ namespace Esercizio_traccia_audio
                                 }
                                 x++;
                             }
+
                             Console.WriteLine("La traccia che costa di più è:");
                             Console.WriteLine("################################");
                             Console.WriteLine($"Codice: {listaTracce[y].codice}");
