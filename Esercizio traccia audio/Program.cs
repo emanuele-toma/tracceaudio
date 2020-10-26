@@ -19,7 +19,7 @@ namespace Esercizio_traccia_audio
             Traccia[] listaTracce = new Traccia[1000];
             int scelta = default(int), inputInt = default(int), num = default(int), x = default(int), y = default(int);
             string inputStr = default(string);
-            decimal media = default(decimal), max = default(decimal);
+            decimal media = default(decimal), max = default(decimal), min = default(decimal);
             bool quit = default(bool), trovato = default(bool);
             num = 0;
 
@@ -65,6 +65,7 @@ namespace Esercizio_traccia_audio
                 Console.WriteLine("#  4) Cancella tracce          #");
                 Console.WriteLine("#  5) Prezzo medio tracce      #");
                 Console.WriteLine("#  6) Traccia prezzo + alto    #");
+                Console.WriteLine("#  7) Traccia prezzo + basso   #");
                 Console.WriteLine("#                              #");
                 Console.WriteLine("################################");
                 Console.WriteLine("#  0) Esci                     #");
@@ -74,6 +75,7 @@ namespace Esercizio_traccia_audio
                 y = 0;
                 x = 0;
                 max = 0;
+                min = 0;
                 media = default;
                 inputInt = default;
                 inputStr = default;
@@ -244,6 +246,30 @@ namespace Esercizio_traccia_audio
                             }
 
                             Console.WriteLine("La traccia che costa di più è:");
+                            Console.WriteLine("################################");
+                            Console.WriteLine($"Codice: {listaTracce[y].codice}");
+                            Console.WriteLine($"Titolo: {listaTracce[y].titolo}");
+                            Console.WriteLine($"File  : {listaTracce[y].nomeFile}");
+                            Console.WriteLine($"Durata: {listaTracce[y].durata} secondi");
+                            Console.WriteLine($"Genere: {listaTracce[y].genere}");
+                            Console.WriteLine($"Prezzo: {listaTracce[y].prezzo} euro");
+                            Console.WriteLine("################################");
+                            break;
+                        }
+                    case 7:
+                        {
+                            min = listaTracce[0].prezzo;
+                            while (x < num)
+                            {
+                                if(listaTracce[x].prezzo < min)
+                                {
+                                    Console.WriteLine(listaTracce[x].prezzo);
+                                    min = listaTracce[x].prezzo;
+                                    y = x;
+                                }
+                                x++;
+                            }
+                            Console.WriteLine("La traccia che costa di meno è:");
                             Console.WriteLine("################################");
                             Console.WriteLine($"Codice: {listaTracce[y].codice}");
                             Console.WriteLine($"Titolo: {listaTracce[y].titolo}");
