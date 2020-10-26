@@ -18,3 +18,10 @@ C:\Users\toma.17085\Source\Repos\tracceaudio\Esercizio traccia audio\obj\Debug\E
 C:\Users\toma.17085\Source\Repos\tracceaudio\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.csproj.CoreCompileInputs.cache
 C:\Users\toma.17085\Source\Repos\tracceaudio\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.exe
 C:\Users\toma.17085\Source\Repos\tracceaudio\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.pdb
+C:\Users\bhz_ema\source\repos\tracceaudio\Esercizio traccia audio\bin\Debug\Esercizio traccia audio.exe.config
+C:\Users\bhz_ema\source\repos\tracceaudio\Esercizio traccia audio\bin\Debug\Esercizio traccia audio.exe
+C:\Users\bhz_ema\source\repos\tracceaudio\Esercizio traccia audio\bin\Debug\Esercizio traccia audio.pdb
+C:\Users\bhz_ema\source\repos\tracceaudio\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.csprojAssemblyReference.cache
+C:\Users\bhz_ema\source\repos\tracceaudio\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.csproj.CoreCompileInputs.cache
+C:\Users\bhz_ema\source\repos\tracceaudio\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.exe
+C:\Users\bhz_ema\source\repos\tracceaudio\Esercizio traccia audio\obj\Debug\Esercizio traccia audio.pdb

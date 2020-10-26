@@ -17,40 +17,40 @@ namespace Esercizio_traccia_audio
         static void Main(string[] args)
         {
             Traccia[] listaTracce = new Traccia[1000];
-            int scelta = default(int), inputInt = default(int), id = default(int), x = default(int), y = default(int);
+            int scelta = default(int), inputInt = default(int), num = default(int), x = default(int), y = default(int);
             string inputStr = default(string);
             decimal media = default(decimal), max = default(decimal);
             bool quit = default(bool), trovato = default(bool);
-            id = 0;
+            num = 0;
 
-            listaTracce[id].codice = "tr1";
-            listaTracce[id].titolo = "banana";
-            listaTracce[id].nomeFile = "banana.mp4";
-            listaTracce[id].durata = 50;
-            listaTracce[id].genere = "rock";
-            listaTracce[id].prezzo = 400;
-            id++;
-            listaTracce[id].codice = "tr2";
-            listaTracce[id].titolo = "sasso";
-            listaTracce[id].nomeFile = "sasso.mp4";
-            listaTracce[id].durata = 90;
-            listaTracce[id].genere = "rock";
-            listaTracce[id].prezzo = 100;
-            id++;
-            listaTracce[id].codice = "tr3";
-            listaTracce[id].titolo = "gorilla";
-            listaTracce[id].nomeFile = "gorilla.mp4";
-            listaTracce[id].durata = 300;
-            listaTracce[id].genere = "pop";
-            listaTracce[id].prezzo = 1000;
-            id++;
-            listaTracce[id].codice = "tr4";
-            listaTracce[id].titolo = "mandrillo";
-            listaTracce[id].nomeFile = "mandrillo.mp4";
-            listaTracce[id].durata = 20;
-            listaTracce[id].genere = "pop";
-            listaTracce[id].prezzo = 400;
-            id++;
+            listaTracce[num].codice = "tr1";
+            listaTracce[num].titolo = "banana";
+            listaTracce[num].nomeFile = "banana.mp4";
+            listaTracce[num].durata = 50;
+            listaTracce[num].genere = "rock";
+            listaTracce[num].prezzo = 400;
+            num++;
+            listaTracce[num].codice = "tr2";
+            listaTracce[num].titolo = "sasso";
+            listaTracce[num].nomeFile = "sasso.mp4";
+            listaTracce[num].durata = 90;
+            listaTracce[num].genere = "rock";
+            listaTracce[num].prezzo = 100;
+            num++;
+            listaTracce[num].codice = "tr3";
+            listaTracce[num].titolo = "gorilla";
+            listaTracce[num].nomeFile = "gorilla.mp4";
+            listaTracce[num].durata = 300;
+            listaTracce[num].genere = "pop";
+            listaTracce[num].prezzo = 1000;
+            num++;
+            listaTracce[num].codice = "tr4";
+            listaTracce[num].titolo = "mandrillo";
+            listaTracce[num].nomeFile = "mandrillo.mp4";
+            listaTracce[num].durata = 20;
+            listaTracce[num].genere = "pop";
+            listaTracce[num].prezzo = 400;
+            num++;
 
             while (!quit)
             {
@@ -95,18 +95,18 @@ namespace Esercizio_traccia_audio
                             {
                                 Console.WriteLine("################################");
                                 Console.Write("Codice traccia: ");
-                                listaTracce[id].codice = Console.ReadLine();
+                                listaTracce[num].codice = Console.ReadLine();
                                 Console.Write("Titolo traccia: ");
-                                listaTracce[id].titolo = Console.ReadLine();
+                                listaTracce[num].titolo = Console.ReadLine();
                                 Console.Write("Nome file traccia: ");
-                                listaTracce[id].nomeFile = Console.ReadLine();
+                                listaTracce[num].nomeFile = Console.ReadLine();
                                 Console.Write("Durata traccia in secondi: ");
-                                listaTracce[id].durata = int.Parse(Console.ReadLine());
+                                listaTracce[num].durata = int.Parse(Console.ReadLine());
                                 Console.Write("Genere traccia: ");
-                                listaTracce[id].genere = Console.ReadLine();
+                                listaTracce[num].genere = Console.ReadLine();
                                 Console.Write("Prezzo traccia: ");
-                                listaTracce[id].prezzo = Decimal.Parse(Console.ReadLine());
-                                id++;
+                                listaTracce[num].prezzo = Decimal.Parse(Console.ReadLine());
+                                num++;
                                 Console.WriteLine("################################");
                                 Console.WriteLine("Aggiungere un altra traccia? [S/N]");
                             } while (Console.ReadKey(true).KeyChar == 's');
@@ -116,7 +116,7 @@ namespace Esercizio_traccia_audio
                         {
                             Console.Write("Inserisci il codice della traccia da modificare: ");
                             inputStr = Console.ReadLine();
-                            while (x < id && !trovato)
+                            while (x < num && !trovato)
                             {
                                 if (listaTracce[x].codice == inputStr)
                                 {
@@ -166,10 +166,8 @@ namespace Esercizio_traccia_audio
                         }
                     case 3:
                         {
-                            while (x < id)
+                            while (x < num)
                             {
-                                //if (listaTracce[x].codice != null)
-                                //{
                                 Console.WriteLine("################################");
                                 Console.WriteLine($"Codice: {listaTracce[x].codice}");
                                 Console.WriteLine($"Titolo: {listaTracce[x].titolo}");
@@ -177,7 +175,6 @@ namespace Esercizio_traccia_audio
                                 Console.WriteLine($"Durata: {listaTracce[x].durata} secondi");
                                 Console.WriteLine($"Genere: {listaTracce[x].genere}");
                                 Console.WriteLine($"Prezzo: {listaTracce[x].prezzo} euro");
-                                //}
                                 x++;
                             }
                             Console.WriteLine("################################");
@@ -187,13 +184,13 @@ namespace Esercizio_traccia_audio
                         {
                             Console.Write("Cancellazione tracce, inserisci la durata minima delle tracce: ");
                             inputInt = int.Parse(Console.ReadLine());
-                            while (x < id)
+                            while (x < num)
                             {
                                 if (listaTracce[x].durata <= inputInt)
                                 {
-                                    id--;
+                                    num--;
                                     y = x;
-                                    while (y < id)
+                                    while (y < num)
                                     {
                                         if (y != listaTracce.Length - 1)
                                         {
@@ -215,9 +212,9 @@ namespace Esercizio_traccia_audio
                         {
                             Console.Write("Inserisci la categorie delle tracce per cui calcolare la media: ");
                             inputStr = Console.ReadLine();
-                            while (x < id)
+                            while (x < num)
                             {
-                                if (listaTracce[x].codice != null && listaTracce[x].genere == inputStr)
+                                if (listaTracce[x].genere == inputStr)
                                 {
                                     media += listaTracce[x].prezzo;
                                     y++;
@@ -236,7 +233,7 @@ namespace Esercizio_traccia_audio
                         }
                     case 6:
                         {
-                            while (x < id)
+                            while (x < num)
                             {
                                 if (listaTracce[x].prezzo > max)
                                 {
