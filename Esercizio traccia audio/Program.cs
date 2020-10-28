@@ -17,12 +17,12 @@ namespace Esercizio_traccia_audio
         static void Main(string[] args)
         {
             Traccia[] listaTracce = new Traccia[1000];
-            int scelta = default(int), inputInt = default(int), num = default(int), x = default(int), y = default(int);
+            int scelta = default(int), inputInt = default(int), num = default(int), x = default(int), y = default(int), sceltaForzata = default;
             string inputStr = default(string);
             decimal media = default(decimal), max = default(decimal), min = default(decimal);
             bool quit = default(bool), trovato = default(bool);
-            num = 0;
-
+            
+            /*num = 0;
             listaTracce[num].codice = "tr1";
             listaTracce[num].titolo = "banana";
             listaTracce[num].nomeFile = "banana.mp4";
@@ -50,28 +50,35 @@ namespace Esercizio_traccia_audio
             listaTracce[num].durata = 20;
             listaTracce[num].genere = "pop";
             listaTracce[num].prezzo = 400;
-            num++;
+            num++;*/
 
             while (!quit)
             {
+                if (sceltaForzata == 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("################################");
+                    Console.WriteLine("#             Menù             #");
+                    Console.WriteLine("################################");
+                    Console.WriteLine("#                              #");
+                    Console.WriteLine("#  1) Aggiungi traccia         #");
+                    Console.WriteLine("#  2) Modifica traccia         #");
+                    Console.WriteLine("#  3) Mostra tracce            #");
+                    Console.WriteLine("#  4) Cancella tracce          #");
+                    Console.WriteLine("#  5) Prezzo medio tracce      #");
+                    Console.WriteLine("#  6) Traccia prezzo + alto    #");
+                    Console.WriteLine("#  7) Traccia prezzo + basso   #");
+                    Console.WriteLine("#                              #");
+                    Console.WriteLine("################################");
+                    Console.WriteLine("#  0) Esci                     #");
+                    Console.WriteLine("################################");
+                    scelta = int.Parse(Console.ReadKey(true).KeyChar.ToString());
+                } else
+                {
+                    scelta = sceltaForzata;
+                }
                 Console.Clear();
-                Console.WriteLine("################################");
-                Console.WriteLine("#             Menù             #");
-                Console.WriteLine("################################");
-                Console.WriteLine("#                              #");
-                Console.WriteLine("#  1) Aggiungi traccia         #");
-                Console.WriteLine("#  2) Modifica traccia         #");
-                Console.WriteLine("#  3) Mostra tracce            #");
-                Console.WriteLine("#  4) Cancella tracce          #");
-                Console.WriteLine("#  5) Prezzo medio tracce      #");
-                Console.WriteLine("#  6) Traccia prezzo + alto    #");
-                Console.WriteLine("#  7) Traccia prezzo + basso   #");
-                Console.WriteLine("#                              #");
-                Console.WriteLine("################################");
-                Console.WriteLine("#  0) Esci                     #");
-                Console.WriteLine("################################");
-                scelta = int.Parse(Console.ReadKey(true).KeyChar.ToString());
-                Console.Clear();
+                sceltaForzata = 0;
                 y = 0;
                 x = 0;
                 max = 0;
@@ -258,6 +265,13 @@ namespace Esercizio_traccia_audio
                         }
                     case 7:
                         {
+                            if(num == 0)
+                            {
+                                Console.WriteLine("Non ci sono tracce, devi inserire un prodotto");
+                                sceltaForzata = 1;
+                                break;
+                            }
+
                             min = listaTracce[0].prezzo;
                             while (x < num)
                             {
