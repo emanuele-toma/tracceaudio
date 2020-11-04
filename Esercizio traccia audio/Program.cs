@@ -21,8 +21,8 @@ namespace Esercizio_traccia_audio
             string inputStr = default(string);
             decimal media = default(decimal), max = default(decimal), min = default(decimal);
             bool quit = default(bool), trovato = default(bool);
-            
-            /*num = 0;
+
+            num = 0;
             listaTracce[num].codice = "tr1";
             listaTracce[num].titolo = "banana";
             listaTracce[num].nomeFile = "banana.mp4";
@@ -50,7 +50,7 @@ namespace Esercizio_traccia_audio
             listaTracce[num].durata = 20;
             listaTracce[num].genere = "pop";
             listaTracce[num].prezzo = 400;
-            num++;*/
+            num++;
 
             while (!quit)
             {
@@ -61,19 +61,21 @@ namespace Esercizio_traccia_audio
                     Console.WriteLine("#             Menù             #");
                     Console.WriteLine("################################");
                     Console.WriteLine("#                              #");
-                    Console.WriteLine("#  1) Aggiungi traccia         #");
-                    Console.WriteLine("#  2) Modifica traccia         #");
-                    Console.WriteLine("#  3) Mostra tracce            #");
-                    Console.WriteLine("#  4) Cancella tracce          #");
-                    Console.WriteLine("#  5) Prezzo medio tracce      #");
-                    Console.WriteLine("#  6) Traccia prezzo + alto    #");
-                    Console.WriteLine("#  7) Traccia prezzo + basso   #");
+                    Console.WriteLine("# 1) Aggiungi traccia          #");
+                    Console.WriteLine("# 2) Modifica traccia          #");
+                    Console.WriteLine("# 3) Mostra tracce             #");
+                    Console.WriteLine("# 4) Cancella tracce           #");
+                    Console.WriteLine("# 5) Prezzo medio tracce       #");
+                    Console.WriteLine("# 6) Traccia prezzo maggiore   #");
+                    Console.WriteLine("# 7) Traccia prezzo minore     #");
+                    Console.WriteLine("# 8) Traccia prezzo minore cat #");
                     Console.WriteLine("#                              #");
                     Console.WriteLine("################################");
                     Console.WriteLine("#  0) Esci                     #");
                     Console.WriteLine("################################");
                     scelta = int.Parse(Console.ReadKey(true).KeyChar.ToString());
-                } else
+                }
+                else
                 {
                     scelta = sceltaForzata;
                 }
@@ -204,7 +206,7 @@ namespace Esercizio_traccia_audio
                                         if (y != listaTracce.Length - 1)
                                         {
                                             listaTracce[y] = listaTracce[y + 1];
-                                            
+
                                             y++;
                                         }
                                     }
@@ -213,7 +215,7 @@ namespace Esercizio_traccia_audio
 
                                 x++;
                             }
-                            
+
                         }
                         Console.WriteLine("Cancellate tutte le tracce con durata inferiore a " + inputInt + " secondi");
                         break;
@@ -265,7 +267,7 @@ namespace Esercizio_traccia_audio
                         }
                     case 7:
                         {
-                            if(num == 0)
+                            if (num == 0)
                             {
                                 Console.WriteLine("Non ci sono tracce, devi inserire un prodotto");
                                 sceltaForzata = 1;
@@ -275,13 +277,57 @@ namespace Esercizio_traccia_audio
                             min = listaTracce[0].prezzo;
                             while (x < num)
                             {
-                                if(listaTracce[x].prezzo < min)
+                                if (listaTracce[x].prezzo < min)
                                 {
-                                    Console.WriteLine(listaTracce[x].prezzo);
                                     min = listaTracce[x].prezzo;
                                     y = x;
                                 }
                                 x++;
+                            }
+                            Console.WriteLine("La traccia che costa di meno è:");
+                            Console.WriteLine("################################");
+                            Console.WriteLine($"Codice: {listaTracce[y].codice}");
+                            Console.WriteLine($"Titolo: {listaTracce[y].titolo}");
+                            Console.WriteLine($"File  : {listaTracce[y].nomeFile}");
+                            Console.WriteLine($"Durata: {listaTracce[y].durata} secondi");
+                            Console.WriteLine($"Genere: {listaTracce[y].genere}");
+                            Console.WriteLine($"Prezzo: {listaTracce[y].prezzo} euro");
+                            Console.WriteLine("################################");
+                            break;
+                        }
+                    case 8:
+                        {
+                            if (num == 0)
+                            {
+                                Console.WriteLine("Non ci sono tracce, devi inserire un prodotto");
+                                sceltaForzata = 1;
+                                break;
+                            }
+
+                            Console.Write("Inserisci la categoria: ");
+                            inputStr = Console.ReadLine();
+
+                            min = listaTracce[0].prezzo;
+                            while (x < num)
+                            {
+                                if (listaTracce[x].genere == inputStr && !trovato)
+                                {
+                                    min = listaTracce[x].prezzo;
+                                    trovato = true;
+                                }
+
+                                if (listaTracce[x].prezzo < min && listaTracce[x].genere == inputStr)
+                                {
+                                    min = listaTracce[x].prezzo;
+                                    y = x;
+                                }
+                                x++;
+                            }
+
+                            if (!trovato)
+                            {
+                                Console.WriteLine("Non ci sono tracce nella categoria " + inputStr);
+                                break;
                             }
                             Console.WriteLine("La traccia che costa di meno è:");
                             Console.WriteLine("################################");
