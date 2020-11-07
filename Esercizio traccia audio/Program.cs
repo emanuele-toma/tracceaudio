@@ -18,10 +18,6 @@ namespace Esercizio_traccia_audio
         {
             Traccia[] listaTracce = new Traccia[1000];
             int num = default;
-            /*int scelta = default, inputInt = default, num = default, x = default, y = default, sceltaForzata = default;
-            string inputStr = default;
-            decimal media = default, max = default, min = default;
-            bool quit = default, trovato = default;*/
             bool quit = default;
 
             num = 0;
@@ -54,7 +50,7 @@ namespace Esercizio_traccia_audio
             listaTracce[num].prezzo = 400;
             num++;
 
-            while (!quit)
+            do
             {
                 int sceltaForzata = default;
                 int scelta = default;
@@ -70,9 +66,9 @@ namespace Esercizio_traccia_audio
                     Console.WriteLine("# 3) Mostra tracce             #");
                     Console.WriteLine("# 4) Cancella tracce           #");
                     Console.WriteLine("# 5) Prezzo medio tracce       #");
-                    Console.WriteLine("# 6) Traccia prezzo maggiore   #");
-                    Console.WriteLine("# 7) Traccia prezzo minore     #");
-                    Console.WriteLine("# 8) Traccia prezzo minore cat #");
+                    Console.WriteLine("# 6) Prezzo maggiore           #");
+                    Console.WriteLine("# 7) Prezzo minore             #");
+                    Console.WriteLine("# 8) Prezzo minore categoria   #");
                     Console.WriteLine("# 9) Cerca un prodotto         #");
                     Console.WriteLine("#                              #");
                     Console.WriteLine("################################");
@@ -97,9 +93,26 @@ namespace Esercizio_traccia_audio
                         {
                             do
                             {
+                                string codice = default;
+                                int x = default;
+                                bool trovato = default;
+
                                 Console.WriteLine("################################");
                                 Console.Write("Codice traccia: ");
-                                listaTracce[num].codice = Console.ReadLine();
+                                codice = Console.ReadLine();
+                                
+                                while (x < num)
+                                {
+                                    if(listaTracce[x].codice == codice)
+                                    {
+                                        trovato = true;
+                                        Console.WriteLine("Questo codice è già stato utilizzato");
+                                        break;
+                                    }
+                                    x++;
+                                }
+                                if (trovato) break;
+
                                 Console.Write("Titolo traccia: ");
                                 listaTracce[num].titolo = Console.ReadLine();
                                 Console.Write("Nome file traccia: ");
@@ -355,7 +368,7 @@ namespace Esercizio_traccia_audio
                             Console.Write("Inserisci il termine da cercare: ");
                             inputStr = Console.ReadLine();
 
-                            while(x < num)
+                            while (x < num)
                             {
                                 if (listaTracce[x].titolo.Contains(inputStr))
                                 {
@@ -382,7 +395,7 @@ namespace Esercizio_traccia_audio
                 }
                 Console.Write("\nPremi un tasto per tornare al menù...");
                 Console.ReadKey();
-            }
+            } while (quit == false);
         }
     }
 }
