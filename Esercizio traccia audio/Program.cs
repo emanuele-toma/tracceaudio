@@ -17,10 +17,12 @@ namespace Esercizio_traccia_audio
         static void Main(string[] args)
         {
             Traccia[] listaTracce = new Traccia[1000];
-            int scelta = default(int), inputInt = default(int), num = default(int), x = default(int), y = default(int), sceltaForzata = default;
-            string inputStr = default(string);
-            decimal media = default(decimal), max = default(decimal), min = default(decimal);
-            bool quit = default(bool), trovato = default(bool);
+            int num = default;
+            /*int scelta = default, inputInt = default, num = default, x = default, y = default, sceltaForzata = default;
+            string inputStr = default;
+            decimal media = default, max = default, min = default;
+            bool quit = default, trovato = default;*/
+            bool quit = default;
 
             num = 0;
             listaTracce[num].codice = "tr1";
@@ -54,6 +56,8 @@ namespace Esercizio_traccia_audio
 
             while (!quit)
             {
+                int sceltaForzata = default;
+                int scelta = default;
                 if (sceltaForzata == 0)
                 {
                     Console.Clear();
@@ -80,18 +84,6 @@ namespace Esercizio_traccia_audio
                     scelta = sceltaForzata;
                 }
                 Console.Clear();
-                sceltaForzata = 0;
-                y = 0;
-                x = 0;
-                max = 0;
-                min = 0;
-                media = default;
-                inputInt = default;
-                inputStr = default;
-                trovato = default;
-
-
-
 
                 switch (scelta)
                 {
@@ -125,6 +117,9 @@ namespace Esercizio_traccia_audio
                         }
                     case 2:
                         {
+                            string inputStr = default;
+                            int x = default;
+                            bool trovato = true;
                             Console.Write("Inserisci il codice della traccia da modificare: ");
                             inputStr = Console.ReadLine();
                             while (x < num && !trovato)
@@ -177,6 +172,7 @@ namespace Esercizio_traccia_audio
                         }
                     case 3:
                         {
+                            int x = default;
                             while (x < num)
                             {
                                 Console.WriteLine("################################");
@@ -193,6 +189,7 @@ namespace Esercizio_traccia_audio
                         }
                     case 4:
                         {
+                            int inputInt = default, x = default, y = default;
                             Console.Write("Cancellazione tracce, inserisci la durata minima delle tracce: ");
                             inputInt = int.Parse(Console.ReadLine());
                             while (x < num)
@@ -215,12 +212,14 @@ namespace Esercizio_traccia_audio
 
                                 x++;
                             }
-
+                            Console.WriteLine("Cancellate tutte le tracce con durata inferiore a " + inputInt + " secondi");
+                            break;
                         }
-                        Console.WriteLine("Cancellate tutte le tracce con durata inferiore a " + inputInt + " secondi");
-                        break;
                     case 5:
                         {
+                            string inputStr = default;
+                            int x = default, y = default;
+                            decimal media = default;
                             Console.Write("Inserisci la categorie delle tracce per cui calcolare la media: ");
                             inputStr = Console.ReadLine();
                             while (x < num)
@@ -244,6 +243,8 @@ namespace Esercizio_traccia_audio
                         }
                     case 6:
                         {
+                            int x = default, y = default;
+                            decimal max = default;
                             while (x < num)
                             {
                                 if (listaTracce[x].prezzo > max)
@@ -267,6 +268,8 @@ namespace Esercizio_traccia_audio
                         }
                     case 7:
                         {
+                            decimal min = default;
+                            int x = default, y = default;
                             if (num == 0)
                             {
                                 Console.WriteLine("Non ci sono tracce, devi inserire un prodotto");
@@ -297,6 +300,10 @@ namespace Esercizio_traccia_audio
                         }
                     case 8:
                         {
+                            string inputStr = default;
+                            decimal min = default;
+                            int x = default, y = default;
+                            bool trovato = default;
                             if (num == 0)
                             {
                                 Console.WriteLine("Non ci sono tracce, devi inserire un prodotto");
