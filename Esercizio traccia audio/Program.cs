@@ -73,6 +73,7 @@ namespace Esercizio_traccia_audio
                     Console.WriteLine("# 6) Traccia prezzo maggiore   #");
                     Console.WriteLine("# 7) Traccia prezzo minore     #");
                     Console.WriteLine("# 8) Traccia prezzo minore cat #");
+                    Console.WriteLine("# 9) Cerca un prodotto         #");
                     Console.WriteLine("#                              #");
                     Console.WriteLine("################################");
                     Console.WriteLine("#  0) Esci                     #");
@@ -109,8 +110,8 @@ namespace Esercizio_traccia_audio
                                 listaTracce[num].genere = Console.ReadLine();
                                 Console.Write("Prezzo traccia: ");
                                 listaTracce[num].prezzo = Decimal.Parse(Console.ReadLine());
-                                num++;
                                 Console.WriteLine("################################");
+                                num++;
                                 Console.WriteLine("Aggiungere un altra traccia? [S/N]");
                             } while (Console.ReadKey(true).KeyChar == 's');
                             break;
@@ -344,6 +345,37 @@ namespace Esercizio_traccia_audio
                             Console.WriteLine($"Durata: {listaTracce[y].durata} secondi");
                             Console.WriteLine($"Genere: {listaTracce[y].genere}");
                             Console.WriteLine($"Prezzo: {listaTracce[y].prezzo} euro");
+                            Console.WriteLine("################################");
+                            break;
+                        }
+                    case 9:
+                        {
+                            string inputStr = default;
+                            int x = default, y = default;
+                            Console.Write("Inserisci il termine da cercare: ");
+                            inputStr = Console.ReadLine();
+
+                            while(x < num)
+                            {
+                                if (listaTracce[x].titolo.Contains(inputStr))
+                                {
+                                    Console.WriteLine("################################");
+                                    Console.WriteLine($"Codice: {listaTracce[x].codice}");
+                                    Console.WriteLine($"Titolo: {listaTracce[x].titolo}");
+                                    Console.WriteLine($"File  : {listaTracce[x].nomeFile}");
+                                    Console.WriteLine($"Durata: {listaTracce[x].durata} secondi");
+                                    Console.WriteLine($"Genere: {listaTracce[x].genere}");
+                                    Console.WriteLine($"Prezzo: {listaTracce[x].prezzo} euro");
+                                    y++;
+                                }
+                                x++;
+                            }
+
+                            if (y == 0)
+                            {
+                                Console.WriteLine("Non è stata trovata nessuna traccia");
+                                break;
+                            }
                             Console.WriteLine("################################");
                             break;
                         }
