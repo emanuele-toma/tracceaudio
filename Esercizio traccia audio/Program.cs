@@ -133,7 +133,7 @@ namespace Esercizio_traccia_audio
                         {
                             string inputStr = default;
                             int x = default;
-                            bool trovato = true;
+                            bool trovato = default;
                             Console.Write("Inserisci il codice della traccia da modificare: ");
                             inputStr = Console.ReadLine();
                             while (x < num && !trovato)
