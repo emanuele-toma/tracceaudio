@@ -186,7 +186,37 @@ namespace Esercizio_traccia_audio
                         }
                     case 3:
                         {
-                            int x = default;
+                            int y = default, x = default, z = default;
+                            z = 1;
+                            while (x < num - 1)
+                            {
+                                decimal max = default;
+                                decimal temp = default;
+                                int indice = default;
+                                y = default;
+
+                                while (y <= num - z)
+                                {
+                                    if (listaTracce[y].prezzo > max)
+                                    {
+                                        max = listaTracce[y].prezzo;
+                                        indice = y;
+                                    }
+                                    y++;
+                                }
+
+                                if (listaTracce[num - z].prezzo != max)
+                                {
+                                    temp = listaTracce[num - z].prezzo;
+                                    listaTracce[num - z].prezzo = max;
+                                    listaTracce[indice].prezzo = temp;
+                                }
+
+                                z++;
+                                x++;
+                            }
+
+                            x = default;
                             while (x < num)
                             {
                                 Console.WriteLine("################################");
